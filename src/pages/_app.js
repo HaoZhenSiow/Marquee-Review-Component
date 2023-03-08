@@ -5,8 +5,9 @@ export default function App({ Component, pageProps }) {
   const { initFluid } = useFluid()
   initFluid()
   return (
-  <GlobalStyle>
-    <Component {...pageProps} />
-  </GlobalStyle>
+    <>
+      <GlobalStyle/>
+      <Component {...pageProps} />
+    </>
   )
 }
