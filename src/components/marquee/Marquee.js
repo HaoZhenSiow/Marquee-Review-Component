@@ -34,9 +34,9 @@ const MarqueeStyled = styled.div`
   }
 `
 
-export default function Marquee({children, duration, reverse, paused}) {
+export default function Marquee({children, duration, reversed, paused}) {
   return (
-    <MarqueeStyled duration={duration} reverse={reverse} paused={paused}>
+    <MarqueeStyled duration={duration} reversed={reversed} paused={paused}>
       {React.Children.only(children)}
       {React.Children.only(children)}
       {React.Children.only(children)}
