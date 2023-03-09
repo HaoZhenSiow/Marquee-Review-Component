@@ -1,5 +1,30 @@
 import Head from 'next/head'
 import Marquee from '@/components/marquee/Marquee'
+import Review from '@/components/marquee/Review'
+import styled from 'styled-components'
+import Image from 'next/image'
+
+const MarqueeRow = styled.div`
+  padding-block-start: 2em;
+  padding-block-end: ${props => props.padding_block_end ? props.padding_block_end : 0}; 
+
+  & > div:nth-child(1) {
+    background-color: #D6FB41;
+  }
+
+  & > div:nth-child(2) {
+    background-color: #E3FF73;
+  }
+
+  & > div:nth-child(3) {
+    background-color: #F1FFB9;
+  }
+
+  & > div:nth-child(4) {
+    background-color: #F8FFDC;
+  }
+
+`
 
 export default function Home() {
   return (
@@ -12,10 +37,93 @@ export default function Home() {
       </Head>
       <main>
         <div>
-          <Marquee duration="10s">
-            <div>
-              <p>Hello World</p>
-            </div>
+          <Marquee duration="70s">
+            <MarqueeRow>
+              <Review>
+                <p>1Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div className='reviewer'>
+                  <Image src="/jonnie.webp" alt='Leo Petrucci' width={50} height={50} borderRadius="400px" className='avatar'/>
+                  <div>
+                    <p className='name'>Leo Petrucci</p>
+                    <p className='title'>CEO of XXX</p>
+                  </div>
+                </div>
+              </Review>
+              <Review>
+                <p>2Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div className='reviewer'>
+                  <Image src="/jonnie.webp" alt='Leo Petrucci' width={50} height={50} borderRadius="400px" className='avatar'/>
+                  <div>
+                    <p className='name'>Leo Petrucci</p>
+                    <p className='title'>CEO of XXX</p>
+                  </div>
+                </div>
+              </Review>
+              <Review>
+                <p>3Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div className='reviewer'>
+                  <Image src="/jonnie.webp" alt='Leo Petrucci' width={50} height={50} borderRadius="400px" className='avatar'/>
+                  <div>
+                    <p className='name'>Leo Petrucci</p>
+                    <p className='title'>CEO of XXX</p>
+                  </div>
+                </div>
+              </Review>
+              <Review>
+                <p>4Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div className='reviewer'>
+                  <Image src="/jonnie.webp" alt='Leo Petrucci' width={50} height={50} borderRadius="400px" className='avatar'/>
+                  <div>
+                    <p className='name'>Leo Petrucci</p>
+                    <p className='title'>CEO of XXX</p>
+                  </div>
+                </div>
+              </Review>
+            </MarqueeRow>
+          </Marquee>
+          <Marquee duration="55s">
+            <MarqueeRow padding_block_end="2em">
+              <Review>
+                <p>1Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div className='reviewer'>
+                  <Image src="/jonnie.webp" alt='Leo Petrucci' width={50} height={50} borderRadius="400px" className='avatar'/>
+                  <div>
+                    <p className='name'>Leo Petrucci</p>
+                    <p className='title'>CEO of XXX</p>
+                  </div>
+                </div>
+              </Review>
+              <Review>
+                <p>2Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div className='reviewer'>
+                  <Image src="/jonnie.webp" alt='Leo Petrucci' width={50} height={50} borderRadius="400px" className='avatar'/>
+                  <div>
+                    <p className='name'>Leo Petrucci</p>
+                    <p className='title'>CEO of XXX</p>
+                  </div>
+                </div>
+              </Review>
+              <Review>
+                <p>3Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div className='reviewer'>
+                  <Image src="/jonnie.webp" alt='Leo Petrucci' width={50} height={50} borderRadius="400px" className='avatar'/>
+                  <div>
+                    <p className='name'>Leo Petrucci</p>
+                    <p className='title'>CEO of XXX</p>
+                  </div>
+                </div>
+              </Review>
+              <Review>
+                <p>4Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div className='reviewer'>
+                  <Image src="/jonnie.webp" alt='Leo Petrucci' width={50} height={50} borderRadius="400px" className='avatar'/>
+                  <div>
+                    <p className='name'>Leo Petrucci</p>
+                    <p className='title'>CEO of XXX</p>
+                  </div>
+                </div>
+              </Review>
+            </MarqueeRow>
           </Marquee>
         </div>
       </main>

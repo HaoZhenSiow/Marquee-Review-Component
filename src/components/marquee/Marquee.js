@@ -11,12 +11,17 @@ const MarqueeStyled = styled.div`
   & > div {
     line-height: 0;
     min-width: 100vw;
-    translate: -100%;
+    flex-shrink: 0;
     animation-name: move;
     animation-duration: ${props => props.duration ? props.duration : '10s'};
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: ${props => props.reverse && 'reverse'};
+    animation-play-state: ${props => props.paused && 'paused'};
+
+    & > * {
+      line-height: normal;
+    }
   }
 
   @keyframes move {
@@ -29,9 +34,9 @@ const MarqueeStyled = styled.div`
   }
 `
 
-export default function Marquee({children, duration, reverse}) {
+export default function Marquee({children, duration, reverse, paused}) {
   return (
-    <MarqueeStyled duration={duration} reverse={reverse}>
+    <MarqueeStyled duration={duration} reverse={reverse} paused={paused}>
       {React.Children.only(children)}
       {React.Children.only(children)}
       {React.Children.only(children)}
